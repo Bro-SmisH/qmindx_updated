@@ -1,0 +1,33 @@
+name: 🚀 Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main   # Deploy whenever you push to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧭 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🏗️ Build the project
+        run: npm run build
+
+      - name: 🌍 Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: 🚀 Deploy to Netlify
+        run: netlify deploy --dir=build --prod
+        env:
+          NETLIFY_AUTH_TOKEN: "nfp_2VEvVeVCwwDVZLYmdUBGpEfqxPaQpCeT87ce"
