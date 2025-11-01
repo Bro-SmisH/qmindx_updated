@@ -1,0 +1,28 @@
+/* Second Hero Section */
+.second-hero-section {
+  padding: 100px 0;
+  background-color: var(--white);
+  position: relative;
+}
+
+.second-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.second-hero-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.second-hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--gray);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}

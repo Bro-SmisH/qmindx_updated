@@ -4,10 +4,16 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import './styles/main.css'
 
 function Root(){
   useEffect(()=>{
-    AOS.init({ duration: 800, easing: 'ease-out', once: true })
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true
+    })
   },[])
   return (
     <BrowserRouter>
