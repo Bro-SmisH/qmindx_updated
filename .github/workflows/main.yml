@@ -1,17 +1,22 @@
-name: 🚀 Deploy to Netlify
+name: 🚀 Manual Deploy to Netlify
 
 on:
-  push:
-    branches:
-      - main   # Deploy whenever you push to main
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Which branch to deploy?"
+        required: true
+        default: "main"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧭 Checkout repository
+      - name: 🧭 Checkout selected branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
 
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
