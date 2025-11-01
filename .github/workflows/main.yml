@@ -28,6 +28,6 @@ jobs:
         run: npm install -g netlify-cli
 
       - name: 🚀 Deploy to Netlify
-        run: netlify deploy --dir=build --prod
+        run: netlify deploy --dir=build --prod --site "6d6bef29-a43b-44e0-a6fc-71e9cd8ced65"
         env:
           NETLIFY_AUTH_TOKEN: "nfp_2VEvVeVCwwDVZLYmdUBGpEfqxPaQpCeT87ce"
